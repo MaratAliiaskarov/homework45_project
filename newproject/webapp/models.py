@@ -10,6 +10,8 @@ class Article(models.Model):
     content = models.TextField(max_length=3000, null=False, blank=False, verbose_name="Content")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created_date")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Date_changes")
+    status = models.CharField(max_length=20, project=STATUS_CHOICES, verbose_name="Status")
+
 
     def __str__(self):
         return f"{self.id}. {self.project}. {self.author}. {self.status}"
