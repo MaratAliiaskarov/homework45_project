@@ -5,12 +5,11 @@ from webapp.models import Article
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'project', 'author', 'created_at']
-    list_display_links = ['project']
-    list_filter = ['author']
-    search_fields = ['project', 'content']
-    fields = ['project', 'author', 'content', 'created_at', 'updated_at']
-    readonly_fields = ['created_at', 'updated_at']
+    list_display = ['id', 'project', 'created_at']
+    list_display_links = ['id', 'project']
+    list_filter = ['project']
+    search_fields = ['project', 'status']
+    fields = ['project', 'status', 'some_date']
 
 
 admin.site.register(Article, ArticleAdmin)

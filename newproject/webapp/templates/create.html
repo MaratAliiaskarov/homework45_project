@@ -8,17 +8,21 @@
 <h1>Create Article</h1>
 <form action="/articles/add/" method="post">
     {% csrf_token %}
-
+    <label>Status:</label><br/>
+    <select name="status">
+        {% for value, status in statuses %}
+            <option value="{{ value }}">{{ status }}</option>
+        {% endfor %}
+    </select>
+    <br/>
     <label>Project:</label><br/>
     <input type="text" name="title"/><br/>
-
-    <label>Content:</label><br/>
-    <textarea name="content"></textarea><br/>
-
-    <label>Author:</label><br/>
-    <input type="text" name="author"/><br/>
+    <label>Some date:</label><br/>
+    <input type="text" name="some_date"/><br/>
     <br/>
     <input type="submit" value="Send"/>
 </form>
 </body>
 </html>
+
+

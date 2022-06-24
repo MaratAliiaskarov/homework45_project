@@ -8,23 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    {% for fild_name, fild_value in user.items %}
-        {% if fild_name == "name" %}
-            <p><i>{{ fild_value }}</i></p>
-        {% else %}
-            <p>{{ fild_value }}</p>
-        {% endif %}
-
-    {% endfor %}
-    {{ user }}
-    <p>
-        {{ project }}
-    </p>
-    <p>
-        {{ content }}
-    </p>
-    <p>
-       {{ author }}
-    </p>
+        <p>
+            {{ article.project }}
+        </p>
+        <p>
+            {{ article.content }}
+        </p>
+        <p>
+            {{ article.author }}
+        </p>
 </body>
 </html>
